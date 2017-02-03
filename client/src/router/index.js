@@ -11,7 +11,7 @@ const routes = [...app]
 const router = new Router({
   routes,
   linkActiveClass: 'active',
-  mode: 'history', // do not use /#/.
+  // mode: 'history', // do not use /#/.
 })
 
 /**

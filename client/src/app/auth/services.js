@@ -3,7 +3,7 @@
 import { http } from 'plugins/http'
 import { getData } from 'utils/get'
 
-// send login data and retrive a new token
+// send login data and retrieve a new token
 export const postLogin = ({ email, password }) =>
   http.post('/auth/token/issue', { email, password })
   /**

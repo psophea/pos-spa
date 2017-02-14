@@ -67,7 +67,7 @@ git commit -m "init"
         * `php artisan db:seed` to fill the tables with fake data
         * `php artisan serve` to serve application on localhost:8000
 3. To run client and server all in one:
-  * With Terminal:
+    * With Terminal:
         * Navigate to **client** folder and then:
         * `yarn run build` to generate client project files and copy into **webservice** folder
         * `cd ..\webservice` to go back into **webservice** folder

@@ -1,12 +1,12 @@
 import { sync } from 'vuex-router-sync'
 import Vue from 'vue'
-import ElementUI from 'element-ui'
-import locale from 'element-ui/lib/locale/lang/en'
+// import ElementUI from 'element-ui'
+// import locale from 'element-ui/lib/locale/lang/en'
 import Root from './Root'
 
 /**
 * This is the Vuex store and it is
-* avaible to all your components
+* available to all your components
 */
 import store from './store'
 
@@ -33,7 +33,7 @@ require('./includes')
 /**
 * Element UI
 */
-Vue.use(ElementUI, { locale })
+// Vue.use(ElementUI, { locale })
 
 /**
 * Make $http avaible to all components
@@ -54,5 +54,6 @@ new Vue({
   store, // injects the Store into all components
   router, // make Router work with the application
   el: '#app',
+  // el: body,
   render: h => h(Root),
 })

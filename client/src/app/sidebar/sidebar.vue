@@ -97,7 +97,7 @@
                         <span class="fa arrow" v-show="menu.children.length"></span>
                     </router-link>
 
-                    <ul class="nav nav-second-level" v-show="menu.children.length">
+                    <ul class="nav nav-second-level collapse" v-show="menu.children.length">
                         <li v-for="item in menu.children">
                             <router-link :to="item.href" replace>{{ item.label }}</router-link>
                         </li>

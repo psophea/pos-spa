@@ -1,6 +1,6 @@
 <script>
     import {mapGetters} from 'vuex'
-    import CcSideBar from './components/root/sidebar'
+    import CcSideBar from './app/sidebar/sidebar'
     //import CcNavBar from './components/root/navbar'
     import CcTopNavBar from './components/root/topnavbar'
     import CcBreadcrumb from './components/root/breadcrumb'
@@ -26,11 +26,11 @@
 <template>
     <div>
         <div id="wrapper" v-show="shouldShowNavigation">
-            <cc-side-bar v-show="shouldShowNavigation"></cc-side-bar>
+            <cc-side-bar></cc-side-bar>
             <!--<cc-nav-bar v-show="shouldShowNavigation"></cc-nav-bar>-->
             <div id="page-wrapper" class="gray-bg">
-                <cc-top-nav-bar v-show="shouldShowNavigation"></cc-top-nav-bar>
-                <cc-breadcrumb v-show="shouldShowNavigation"></cc-breadcrumb>
+                <cc-top-nav-bar></cc-top-nav-bar>
+                <cc-breadcrumb></cc-breadcrumb>
                 <!--<div class="container">-->
                 <!--<cc-alerts></cc-alerts>-->
                 <div class="row">
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <cc-footer v-show="shouldShowNavigation"></cc-footer>
+                <cc-footer></cc-footer>
             </div>
         </div>
 

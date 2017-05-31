@@ -24,5 +24,39 @@ Route::group([
         ]);
 
         Route::get('/me', 'MeController@show');
+
+
+/*
+Actions Handled By Resource Controller
+
+Verb        URI                     Action      Route Name
+====        ===                     ======      ==========
+GET         /photos                 index       photos.index
+GET         /photos/create          create      photos.create
+POST        /photos                 store       photos.store
+GET         /photos/{photo}         show        photos.show
+GET         /photos/{photo}/edit    edit        photos.edit
+PUT/PATCH   /photos/{photo}         update      photos.update
+DELETE      /photos/{photo}         destroy     photos.destroy
+*/
+
+        /*
+        API Group for version 1.0
+        Base endpoint: /api/v1
+        */
+        Route::group(['prefix' => 'v1'], function() {
+
+            // path: GET /api/v1/tags/full-list
+            Route::get('/tags/full-list', 'TagsController@fullList');
+            
+            // path: /api/v1/tags
+            Route::resource('/tags', 'TagsController', [
+                'except' => ['create', 'edit'],
+            ]);
+
+            Route::post('/tags/attach-product', 'TagsController@attachProduct');
+
+        });
+
     });
 });

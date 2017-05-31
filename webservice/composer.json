@@ -12,7 +12,8 @@
         "barryvdh/laravel-cors": "0.8.*",
         "tymon/jwt-auth": "~1.0",
         "predis/predis": "~1.1",
-        "league/fractal": "0.14.*"
+        "league/fractal": "0.14.*",
+        "barryvdh/laravel-ide-helper": "^2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

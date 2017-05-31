@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         'products',
         'categories',
         'menus',
+        'tags'
     ];
 
     /**
@@ -31,6 +32,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CategoriesTableSeeder::class);
         $this->call(ProductsTableSeeder::class);
         $this->call(MenusTableSeeder::class);
+        $this->call(TagsTableSeeder::class);
     }
 
     /**

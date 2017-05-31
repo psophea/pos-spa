@@ -117,6 +117,21 @@ class Response
     }
 
     /**
+     * Return a 400 response.
+     *
+     * @param  string $message
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function withBadRequest($message = 'Bad Request')
+    {
+        return $this->setStatusCode(
+            HttpResponse::HTTP_BAD_REQUEST
+        )->withError($message);
+    }
+
+
+    /**
      * Make a 204 response.
      *
      * @return \Illuminate\Http\JsonResponse

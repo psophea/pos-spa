@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Tag;
+use App\Tag; 
 use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Requests\TagRequest;
@@ -97,13 +97,10 @@ class TagsController extends ApiController
     public function destroy($id)
     {
         $tag = Tag::find($id);
-
         if (!$tag) {
             return $this->response->withNotFound('Tag not found');
         }
-
         $tag->delete();
-
         return $this->response->withNoContent();
     }
 
@@ -134,4 +131,6 @@ class TagsController extends ApiController
         return $this->response->withError('Attached to product.');
 //        return $this->response->item($tag);
     }
+    
+   
 }

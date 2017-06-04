@@ -36,5 +36,7 @@ return [
         App\Product::class => App\Transformers\ProductTransformer::class,
         App\Category::class => App\Transformers\CategoryTransformer::class,
         App\Tag::class => App\Transformers\TagTransformer::class,
+        App\CustomerGroup::class => App\Transformers\CustomerGroupTransformer::class,
+        App\Outlet::class => App\Transformers\OutletTransformer::class,
     ],
 ];

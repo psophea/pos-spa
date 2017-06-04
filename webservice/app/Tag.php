@@ -13,4 +13,5 @@ class Tag extends Model
     {
         return $this->belongsToMany(Product::class);
     }
+    
 }

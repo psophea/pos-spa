@@ -36,7 +36,7 @@ class ProductsController extends ApiController
             'category_id' => $request->category,
         ]);
 
-        return $this->response->withCreated($product);
+        return $this->response->withCreated($product); 
     }
 
     /**

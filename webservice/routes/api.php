@@ -52,9 +52,16 @@ DELETE      /photos/{photo}         destroy     photos.destroy
             // path: /api/v1/tags
             Route::resource('/tags', 'TagsController', [
                 'except' => ['create', 'edit'],
+            ]);                        
+            Route::post('/tags/attach-product', 'TagsController@attachProduct');            
+            
+            // Customer Group
+            Route::get('/customer-group/full-list','CustomerGroupController@fullList');
+            Route::resource('/customer-group', 'CustomerGroupController', [
+                'except' => ['create', 'edit'],
             ]);
-
-            Route::post('/tags/attach-product', 'TagsController@attachProduct');
+            
+            Route::get('/outlets/full-list','OutletController@fullList');
 
         });
 

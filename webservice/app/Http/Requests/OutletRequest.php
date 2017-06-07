@@ -24,8 +24,7 @@ class OutletRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'id' => 'required'
+            'name' => 'required'
         ];
     }
 }

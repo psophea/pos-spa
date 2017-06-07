@@ -61,8 +61,14 @@ DELETE      /photos/{photo}         destroy     photos.destroy
                 'except' => ['create', 'edit'],
             ]);
             
+            // Outlet
             Route::get('/outlets/full-list','OutletController@fullList');
-
+            Route::resource('/outlets', 'OutletController', [
+                'except' => ['create', 'edit'],
+            ]);
+            
+            
+            
         });
 
     });

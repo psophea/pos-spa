@@ -5,9 +5,10 @@ Route::group([
 ], function () {
     Route::post('/auth/token/issue', 'AuthController@issueToken');
     Route::post('/auth/token/refresh', 'AuthController@refreshToken');
+    Route::post('/auth/token/revoke', 'AuthController@revokeToken');
 
     Route::group([
-//        'middleware' => 'jwt.auth',
+        'middleware' => 'jwt.auth',
     ], function () {
         Route::post('/auth/token/revoke', 'AuthController@revokeToken');
 

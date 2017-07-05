@@ -122,7 +122,7 @@ class AuthControllerTest extends ApiTestCase
 
         $this->json('POST', $this->urlTokenRevoke, [], $headers);
 
-        $this->assertResponseStatus(400);
+        $this->assertResponseStatus(401);
         $this->seeJsonStructure([
             'messages' => [],
         ]);

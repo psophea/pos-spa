@@ -43,12 +43,7 @@ class TagsController extends ApiController
      */
     public function store(TagRequest $request)
     {
-        $product = Product::find($request->productId);
-        if (!$product){
-            return $this->response->withNotFound('Product not found');
-        }
         $tag = Tag::create($request->all());
-        $tag->products()->attach($request->productId);
         return $this->response->withCreated($tag);
     }
 

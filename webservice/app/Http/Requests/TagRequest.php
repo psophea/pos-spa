@@ -24,8 +24,7 @@ class TagRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'productId' => 'required'
+            'name' => 'required'
         ];
     }
 }

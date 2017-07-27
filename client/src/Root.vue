@@ -1,38 +1,31 @@
 <script>
-    import {mapGetters} from 'vuex'
-    import CcSideBar from './app/sidebar/sidebar'
-    //import CcNavBar from './components/root/navbar'
-    import CcTopNavBar from './components/root/topnavbar'
-    import CcBreadcrumb from './components/root/breadcrumb'
-//    import CcAlerts from './components/general/alerts'
-    import CcFooter from './components/root/footer'
+import { mapGetters } from 'vuex'
+import CcSideBar from './app/sidebar/sidebar'
+import CcTopNavBar from './components/root/topnavbar'
+import CcBreadcrumb from './components/root/breadcrumb'
+import CcFooter from './components/root/footer'
 
-    export default {
-        name: 'Codecasts',
-        components: {
-            CcSideBar,
-//    CcNavBar,
-            CcTopNavBar,
-            CcBreadcrumb,
-//            CcAlerts,
-            CcFooter,
-        },
-        computed: {
-            ...mapGetters(['shouldShowNavigation']),
-        },
-    }
+export default {
+    name: 'Codecasts',
+    components: {
+        CcSideBar,
+        CcTopNavBar,
+        CcBreadcrumb,
+        CcFooter,
+    },
+    computed: {
+        ...mapGetters(['shouldShowNavigation']),
+    },
+}
 </script>
 
 <template>
-    <div>
-        <div id="wrapper" v-show="shouldShowNavigation">
+    <div id="app">
+        <div id="wrapper" v-if="shouldShowNavigation">
             <cc-side-bar></cc-side-bar>
-            <!--<cc-nav-bar v-show="shouldShowNavigation"></cc-nav-bar>-->
             <div id="page-wrapper" class="gray-bg">
                 <cc-top-nav-bar></cc-top-nav-bar>
                 <cc-breadcrumb></cc-breadcrumb>
-                <!--<div class="container">-->
-                <!--<cc-alerts></cc-alerts>-->
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="wrapper wrapper-content">
@@ -43,9 +36,6 @@
                 <cc-footer></cc-footer>
             </div>
         </div>
-
-        <router-view v-show="!shouldShowNavigation"></router-view>
+        <router-view v-else></router-view>
     </div>
 </template>
-
-<!--<style lang="sass" src="assets/sass/app.scss"></style>-->

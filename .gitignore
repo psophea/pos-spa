@@ -7,3 +7,5 @@ npm-debug.log
 client/npm-debug.log.1734035463
 webservice/public/stats.json
 /nbproject/private/
+webservice/composer.lock
+webservice/.vscode/settings.json

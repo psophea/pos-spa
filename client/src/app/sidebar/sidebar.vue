@@ -89,7 +89,7 @@
                 </li>
 
                 <!-- menu item -->
-                <li v-for="menu in menu_list">
+                <li v-for="(menu, index) in menu_list" v-bind:key="index">
                     <router-link :to="menu.href" replace>
                         <i :class="menu.icon"></i>
                         <span :class="menu.is_nav_label? 'nav-label':''">{{ menu.label }}</span>
@@ -97,14 +97,14 @@
                     </router-link>
 
                     <ul class="nav nav-second-level" v-show="menu.children.length">
-                        <li v-for="item in menu.children">
+                        <li v-for="(item, index) in menu.children" v-bind:key="index">
                             <router-link :to="item.href" replace>{{ item.label }}</router-link>
                         </li>
                     </ul>
                 </li>
                 <!-- end of menu item -->
 
-                <li class="active">
+                <!-- <li class="active">
                     <a href="index.html">
                       <i class="fa fa-th-large"></i>
                       <span class="nav-label">Dashboards</span>
@@ -117,7 +117,7 @@
                         <li><a href="dashboard_4_1.html">Dashboard v.4</a></li>
                         <li><a href="dashboard_5.html">Dashboard v.5 </a></li>
                       </ul>
-                 </li>
+                 </li> -->
             </ul>
 
         </div>
